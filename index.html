@@ -13,12 +13,17 @@
         <p class="playerName">Введите имя бойца:</p>
         <div class="input__container">
           <input type="text" id="playerNameInput" placeholder="Имя бойца" />
-          <button id="startButton">В БОЙ!</button>
+          <button id="startButton">Играть</button>
         </div>
       </div>
     </div>
-
-    <div id="screen-home"></div>
+    <div class="screen-container">
+      <div id="screen-home" class="screen">
+        <h2>Добро пожаловать, <span id="playerNameDisplay"></span>!</h2>
+        <button id="startFightButton" class="startFight">В БОЙ!!!</button>
+      </div>
+    </div>
     <div id="screen-fight"></div>
+    <script src="js/main.js"></script>
   </body>
 </html>

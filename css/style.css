@@ -42,3 +42,16 @@ body {
     align-items: center;
     margin-top: 20px;
 }
+
+.screen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.screen {
+    display: none;
+}
+
+.startFight {}
