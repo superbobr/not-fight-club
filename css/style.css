@@ -10,7 +10,8 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    background: url('../assets/background.png') no-repeat center center fixed;
+    background: url('../assets/background.png') no-repeat top center fixed;
+    background-position-y: 50%;
     background-size: cover;
 }
 
