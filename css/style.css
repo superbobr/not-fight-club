@@ -55,3 +55,12 @@ body {
 }
 
 .startFight {}
+
+.screen-character {
+    display: none;
+}
+
+#goToCharacter {
+    margin-right: 20px;
+
+}

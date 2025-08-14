@@ -3,16 +3,22 @@ const button = document.getElementById("startButton");
 const screenHome = document.getElementById("screen-home");
 const playerNameDisplay = document.getElementById("playerNameDisplay");
 const startFightButton = document.getElementById("startFightButton");
-let playerName = "";
+
+let player = {
+  name: "",
+  avatar: "assets/avatar1.png",
+  wins: 0,
+  losses: 0,
+};
 
 button.addEventListener("click", () => {
   const name = input.value.trim();
   if (name) {
-    playerName = name;
-    console.log(`Имя сохранено: ${playerName}`);
+    player.name = name;
+    console.log(`Имя сохранено: ${player.name}`);
     const screenRegister = document.querySelector(".screen-register");
     screenRegister.style.display = "none";
-    playerNameDisplay.textContent = playerName;
+    playerNameDisplay.textContent = player.name;
     screenHome.style.display = "block";
   } else {
     alert("Пожалуйста, введите имя бойца.");

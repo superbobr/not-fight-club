@@ -16,6 +16,7 @@
           <button id="startButton">Играть</button>
         </div>
       </div>
+      <button id="goToCharacter">Мой боец</button>
     </div>
     <div class="screen-container">
       <div id="screen-home" class="screen">
@@ -24,6 +25,44 @@
       </div>
     </div>
     <div id="screen-fight"></div>
+    <div id="screen-character" class="character">
+      <h2>Ваш боец</h2>
+      <div class="character-info">
+        <img
+          id="characterAvatar"
+          src="assets/avatar1.png"
+          alt="Аватар"
+          width="100"
+        />
+        <p><strong>Имя:</strong> <span id="charPlayerName"></span></p>
+        <p><strong>Побед:</strong> <span id="wins">0</span></p>
+        <p><strong>Поражений:</strong> <span id="losses">0</span></p>
+      </div>
+
+      <div class="avatar-selection">
+        <p>Выберите аватар:</p>
+        <img
+          src="assets/avatar1.png"
+          alt="Аватар 1"
+          width="50"
+          class="avatar-option"
+        />
+        <img
+          src="assets/avatar2.png"
+          alt="Аватар 2"
+          width="50"
+          class="avatar-option"
+        />
+        <img
+          src="assets/avatar3.png"
+          alt="Аватар 3"
+          width="50"
+          class="avatar-option"
+        />
+      </div>
+
+      <button id="backToHome">Назад</button>
+    </div>
     <script src="js/main.js"></script>
   </body>
 </html>
