@@ -6,6 +6,7 @@ const playerNameDisplay = document.getElementById("playerNameDisplay");
 const startFightButton = document.getElementById("startFightButton");
 const goToCharacter = document.getElementById("goToCharacter");
 const screenCharacter = document.getElementById("screen-character");
+const avatarOptions = document.querySelectorAll(".avatar-option");
 
 let player = {
   name: "",
@@ -39,3 +40,16 @@ function updateCharacterScreen() {
   document.getElementById("wins").textContent = player.wins;
   document.getElementById("losses").textContent = player.losses;
 }
+
+avatarOptions.forEach((img) => {
+  img.addEventListener("click", function () {
+    player.avatar = this.src;
+    document.getElementById("characterAvatar").src = player.avatar;
+    console.log("Аватар изменён на:", player.avatar);
+  });
+});
+
+document.getElementById("backToHome").addEventListener("click", function () {
+  screenCharacter.style.display = "none";
+  screenHome.style.display = "block";
+});
