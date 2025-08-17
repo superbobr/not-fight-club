@@ -16,7 +16,6 @@
           <button id="startButton">Играть</button>
         </div>
       </div>
-      <button id="goToCharacter">Мой боец</button>
     </div>
     <div class="screen-container">
       <div id="screen-home" class="screen">
@@ -25,7 +24,7 @@
         <button id="goToSettings">Настройки</button>
       </div>
     </div>
-    <div id="screen-fight"></div>
+
     <div id="screen-character" class="character">
       <h2>Ваш боец</h2>
       <div class="character-info">
@@ -64,7 +63,7 @@
 
       <button id="backToHome">Назад</button>
     </div>
-    <div id="screen-settings" class="screen">
+    <div id="screen-settings" class="screen-settings">
       <h2>Настройки</h2>
       <p>
         Текущее имя: <strong><span id="currentName"></span></strong>
@@ -74,9 +73,60 @@
         <label for="newNameInput">Введите новое имя:</label>
         <input type="text" id="newNameInput" placeholder="Новое имя бойца" />
       </div>
+      <button id="goToCharacter">Мой боец</button>
 
       <button id="saveName">Сохранить</button>
       <button id="backToHomeFromSettings">Назад</button>
+    </div>
+    <div id="screen-fight" class="screen">
+      <h2>БОЙ!</h2>
+
+      <div class="fighter">
+        <h3>Вы</h3>
+        <img
+          id="playerAvatar"
+          src="assets/avatar1.png"
+          width="80"
+          alt="Ваш аватар"
+        />
+        <div>
+          Здоровье: <strong><span id="playerHealth">100</span></strong>
+        </div>
+      </div>
+
+      <div class="fighter">
+        <h3>Противник</h3>
+        <img
+          id="enemyAvatar"
+          src="assets/enemy1.png"
+          width="80"
+          alt="Противник"
+        />
+        <div>
+          Здоровье: <strong><span id="enemyHealth">100</span></strong>
+        </div>
+      </div>
+
+      <div class="zones">
+        <p>Выберите зону для атаки:</p>
+        <button class="zone attack-zone" data-zone="head">Голова</button>
+        <button class="zone attack-zone" data-zone="body">Тело</button>
+        <button class="zone attack-zone" data-zone="legs">Ноги</button>
+
+        <p>Выберите ДВЕ зоны для защиты:</p>
+        <button class="zone defend-zone" data-zone="head">Голова</button>
+        <button class="zone defend-zone" data-zone="body">Тело</button>
+        <button class="zone defend-zone" data-zone="legs">Ноги</button>
+      </div>
+
+      <button id="attackButton" disabled>Атаковать!</button>
+
+      <div id="battleLog">
+        <h3>Лог боя:</h3>
+        <div id="logEntries"></div>
+      </div>
+
+      <button id="backToHomeFromFight">Вернуться в меню</button>
     </div>
     <script src="js/main.js"></script>
   </body>

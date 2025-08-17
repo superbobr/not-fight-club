@@ -75,3 +75,81 @@ body {
     cursor: pointer;
     border: 2px solid green;
 }
+
+#screen-settings {
+    display: none;
+}
+
+.screen-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fighter {
+    margin: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.zones {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.zone {
+    margin: 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.zone.selected {
+    background: #007bff;
+    color: white;
+    border: 2px solid yellow;
+}
+
+#attackButton {
+    font-size: 18px;
+    padding: 12px 24px;
+    background: #d9534f;
+    color: white;
+    border: none;
+    margin: 20px 0;
+}
+
+#battleLog {
+    text-align: left;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.log-entry {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.log-entry.hit {
+    color: #0056b3;
+}
+
+.log-entry.critical {
+    color: #c00;
+    font-weight: bold;
+}
+
+.log-entry.miss {
+    color: #6c757d;
+    font-style: italic;
+}
