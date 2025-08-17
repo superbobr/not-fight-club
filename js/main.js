@@ -7,6 +7,13 @@ const startFightButton = document.getElementById("startFightButton");
 const goToCharacter = document.getElementById("goToCharacter");
 const screenCharacter = document.getElementById("screen-character");
 const avatarOptions = document.querySelectorAll(".avatar-option");
+const screenSettings = document.getElementById("screen-settings");
+const currentName = document.getElementById("currentName");
+const newNameInput = document.getElementById("newNameInput");
+const saveNameButton = document.getElementById("saveName");
+const backToHomeFromSettings = document.getElementById(
+  "backToHomeFromSettings"
+);
 
 let player = {
   name: "",
