@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(`Имя сохранено: ${player.name}`);
       screenRegister.style.display = "none";
       playerNameDisplay.textContent = player.name;
-      screenHome.style.display = "block";
+      screenHome.style.display = "flex";
     } else {
       alert("Пожалуйста, введите имя бойца.");
     }
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     screenRegister.style.display = "none";
     screenSettings.style.display = "none";
     updateCharacterScreen();
-    screenCharacter.style.display = "block";
+    screenCharacter.style.display = "flex";
   });
 
   function updateCharacterScreen() {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("backToHome").addEventListener("click", function () {
     screenCharacter.style.display = "none";
-    screenHome.style.display = "block";
+    screenHome.style.display = "flex";
   });
 
   function clearSelection() {
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     player.health = player.maxHealth;
     const enemies = [
       {
-        name: "Джон Киллер",
+        name: "Джон",
         avatar: "assets/enemy1.png",
         maxHealth: 100,
         attack: 10,
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
         defendZones: 2,
       },
       {
-        name: "Виктор Лом",
+        name: "Лом",
         avatar: "assets/enemy2.png",
         maxHealth: 100,
         attack: 15,
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
         defendZones: 3,
       },
       {
-        name: "Марк Молот",
+        name: "Молот",
         avatar: "assets/enemy3.png",
         maxHealth: 100,
         attack: 8,
@@ -191,7 +191,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("playerHealth").textContent = player.health;
     document.getElementById("enemyHealth").textContent =
       window.currentEnemy.currentHealth;
-
+    document.getElementById("fightPlayerName").textContent = player.name;
+    document.getElementById("fightEnemyName").textContent = currentEnemy.name;
     clearSelection();
     updateAttackButton();
 
