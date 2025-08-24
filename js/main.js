@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const screenFight = document.getElementById("screen-fight");
   const backToHomeFromFight = document.getElementById("backToHomeFromFight");
 
-  let player = {
+  let player = loadPlayer() || {
     name: "",
     avatar: "assets/avatar1.png",
     wins: 0,
@@ -33,10 +33,21 @@ document.addEventListener("DOMContentLoaded", function () {
     defendZones: 2,
   };
 
+  if (player.name) {
+    screenRegister.style.display = "none";
+    screenHome.style.display = "block";
+    playerNameDisplay.textContent = player.name;
+    updateCharacterScreen();
+  } else {
+    screenRegister.style.display = "flex";
+    screenHome.style.display = "none";
+  }
+
   button.addEventListener("click", () => {
     const name = input.value.trim();
     if (name) {
       player.name = name;
+      savePlayer();
       console.log(`Имя сохранено: ${player.name}`);
       screenRegister.style.display = "none";
       playerNameDisplay.textContent = player.name;
@@ -64,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     img.addEventListener("click", function () {
       player.avatar = this.src;
       document.getElementById("characterAvatar").src = player.avatar;
+      savePlayer();
       console.log("Аватар изменён на:", player.avatar);
     });
   });
@@ -98,11 +110,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   saveNameButton.addEventListener("click", function () {
     const newName = newNameInput.value.trim();
+
     if (newName && newName !== player.name) {
       player.name = newName;
+      savePlayer();
       playerNameDisplay.textContent = player.name;
       currentName.textContent = player.name;
       document.getElementById("charPlayerName").textContent = player.name;
+      document.getElementById("fightPlayerName").textContent = player.name;
       alert(`Имя изменено на: ${newName}`);
       newNameInput.value = "";
     } else if (newName === player.name) {
@@ -308,10 +323,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (player.health <= 0) {
       player.losses++;
+      savePlayer();
       alert("Вы проиграли бой!");
       endBattle();
     } else if (window.currentEnemy.currentHealth <= 0) {
       player.wins++;
+      savePlayer();
       alert("Победа!");
       endBattle();
     }
@@ -328,4 +345,16 @@ document.addEventListener("DOMContentLoaded", function () {
     screenFight.style.display = "none";
     screenHome.style.display = "flex";
   });
+  function savePlayer() {
+    localStorage.setItem("notFightClubPlayer", JSON.stringify(player));
+  }
+
+  localStorage;
+  function loadPlayer() {
+    const saved = localStorage.getItem("notFightClubPlayer");
+    if (saved) {
+      return JSON.parse(saved);
+    }
+    return null;
+  }
 });
